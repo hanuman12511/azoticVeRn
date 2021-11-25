@@ -1,0 +1,155 @@
+{
+  "project_info": {
+    "project_number": "613644420203",
+    "firebase_url": "https://bakery-b738d.firebaseio.com",
+    "project_id": "bakery-b738d",
+    "storage_bucket": "bakery-b738d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613644420203:android:59e9cf40dcab5c1fc7dd2e",
+        "android_client_info": {
+          "package_name": "com.agzotic.client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEk94Zjgui5GFmxlARofoGAva4DUtRI2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "613644420203-grlmtpq1l4hmqbcrkcc0cmqvds83uvhr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doomshell.vendorbakery"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613644420203:android:93e1659ca0ee12cac7dd2e",
+        "android_client_info": {
+          "package_name": "com.agzotic.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEk94Zjgui5GFmxlARofoGAva4DUtRI2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "613644420203-grlmtpq1l4hmqbcrkcc0cmqvds83uvhr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doomshell.vendorbakery"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613644420203:android:360c0178c9bf9396c7dd2e",
+        "android_client_info": {
+          "package_name": "com.doomshell.bakery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEk94Zjgui5GFmxlARofoGAva4DUtRI2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "613644420203-grlmtpq1l4hmqbcrkcc0cmqvds83uvhr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doomshell.vendorbakery"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613644420203:android:538adc7a607e0b06c7dd2e",
+        "android_client_info": {
+          "package_name": "com.doomshell.vendorbakery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEk94Zjgui5GFmxlARofoGAva4DUtRI2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613644420203-rb16omhqpj6s25pruuoh8g9jo8v0kn6k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "613644420203-grlmtpq1l4hmqbcrkcc0cmqvds83uvhr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doomshell.vendorbakery"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
