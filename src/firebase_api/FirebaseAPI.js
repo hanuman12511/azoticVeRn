@@ -16,10 +16,10 @@ const createAndroidNotificationChannel = () => {
   try {
     // Build a channel
     const channel = new firebase.notifications.Android.Channel(
-      'vendor_bakery',
-      'vendor_bakery channel',
+      'agzoticVendor',
+      'agzoticVendor channel',
       firebase.notifications.Android.Importance.Max,
-    ).setDescription('vendor_bakery app channel');
+    ).setDescription('agzoticVendor app channel');
 
     // Create the channel
     firebase.notifications().android.createChannel(channel);
@@ -86,7 +86,7 @@ const getToken = async () => {
 };
 
 // Token Listeners
-const onTokenRefreshCallback = async (fcmToken) => {
+const onTokenRefreshCallback = async fcmToken => {
   try {
     if (fcmToken) {
       // calling api to update token
@@ -102,20 +102,20 @@ const onTokenRefreshCallback = async (fcmToken) => {
   }
 };
 
-export const createOnTokenRefreshListener = (thisArg) => {
+export const createOnTokenRefreshListener = thisArg => {
   thisArg.onTokenRefreshListener = firebase
     .messaging()
     .onTokenRefresh(onTokenRefreshCallback);
 };
 
-export const removeOnTokenRefreshListener = (thisArg) => {
+export const removeOnTokenRefreshListener = thisArg => {
   thisArg.onTokenRefreshListener();
 };
 
 // Notification Listeners
-export const createNotificationListeners = async (thisArg) => {
+export const createNotificationListeners = async thisArg => {
   // Triggered when a particular notification has been received in foreground
-  const onNotificationCallback = async (notification) => {
+  const onNotificationCallback = async notification => {
     // build the notification
     notification.setSound('default');
 
@@ -144,7 +144,7 @@ export const createNotificationListeners = async (thisArg) => {
   // If your app is in background, you can listen for when a notification is clicked/tapped/opened
   thisArg.onNotificationOpenedListener = firebase
     .notifications()
-    .onNotificationOpened((notificationObj) => {
+    .onNotificationOpened(notificationObj => {
       nsNavigate('Notification');
     });
 
@@ -158,7 +158,7 @@ export const createNotificationListeners = async (thisArg) => {
   }
 };
 
-export const removeNotificationListeners = (thisArg) => {
+export const removeNotificationListeners = thisArg => {
   // Remove listeners allocated in createNotificationListeners()
   thisArg.onNotificationListener();
   thisArg.onNotificationOpenedListener();
