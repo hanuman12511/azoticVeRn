@@ -128,7 +128,7 @@ export default class AddProduct extends Component {
         if (success) {
           const {startTakingOrder} = response;
 
-          const timeSlots = startTakingOrder.map((item) => ({
+          const timeSlots = startTakingOrder.map(item => ({
             Id: item.id,
             Name: item.time,
             Value: item.time,
@@ -166,12 +166,8 @@ export default class AddProduct extends Component {
     }
   };
   handleAddProduct = async () => {
-    const {
-      slotsInfo,
-      selectedTakingTime,
-      selectedState2,
-      isAllTimeAvailable,
-    } = this.state;
+    const {slotsInfo, selectedTakingTime, selectedState2, isAllTimeAvailable} =
+      this.state;
 
     if (isAllTimeAvailable === false && selectedTakingTime.Id === -1) {
       Alert.alert('Alert!', 'Select Start Time!', [{text: 'OK'}], {
@@ -199,12 +195,12 @@ export default class AddProduct extends Component {
         productTypeId,
       } = item;
 
-      const custom = Customization.map((i) => ({
+      const custom = Customization.map(i => ({
         name: i.CustomName,
         price: i.CustomPrice,
       }));
 
-      const addOns = AddonsData.map((i) => ({
+      const addOns = AddonsData.map(i => ({
         name: i.AddName,
         price: i.AddPrice,
       }));
@@ -275,7 +271,7 @@ export default class AddProduct extends Component {
   };
 
   // Start Taking Orders
-  handleSelectStartTakingOrder = (selectedTakingTime) => {
+  handleSelectStartTakingOrder = selectedTakingTime => {
     this.setState({selectedTakingTime});
     return selectedTakingTime;
   };
@@ -324,7 +320,7 @@ export default class AddProduct extends Component {
   };
 
   // Stop Taking Orders
-  handleSelectStopTakingOrder = (selectedState2) => {
+  handleSelectStopTakingOrder = selectedState2 => {
     this.setState({selectedState2});
     return selectedState2;
   };
@@ -374,24 +370,31 @@ export default class AddProduct extends Component {
 
   renderSlotTimings = () => {
     const {slotTimings} = this.state;
-    const slotTimingUIElements = slotTimings.map((item, index) => {
-      const data = item.split('-');
-      const startTime = data[0];
-      const endTime = data[1];
+    console.log('state===', this.state);
+
+    console.log('timeslot==', slotTimings);
+    try {
+      const slotTimingUIElements = slotTimings.map((item, index) => {
+        const data = item.split('-');
+        const startTime = data[0];
+        const endTime = data[1];
+        return (
+          <View style={[styles.dayButton]}>
+            <Text style={styles.slotItem}>{startTime}</Text>
+            <Text style={styles.slotItem}>{endTime}</Text>
+          </View>
+        );
+      });
+
       return (
-        <View style={[styles.dayButton]}>
-          <Text style={styles.slotItem}>{startTime}</Text>
-          <Text style={styles.slotItem}>{endTime}</Text>
+        <View style={styles.slotRowHeader}>
+          <Text style={[styles.day, {textAlign: 'center'}]}>All Slots</Text>
+          {slotTimingUIElements}
         </View>
       );
-    });
-
-    return (
-      <View style={styles.slotRowHeader}>
-        <Text style={[styles.day, {textAlign: 'center'}]}>All Slots</Text>
-        {slotTimingUIElements}
-      </View>
-    );
+    } catch (error) {
+      console.log('eroo=', error);
+    }
   };
 
   toggleSlotCallback = (checkboxState, day, slotTiming) => {
@@ -429,6 +432,8 @@ export default class AddProduct extends Component {
       //   Array.isArray(daySelectedSlots),
       // );
 
+      console.log('slotTimings', slotTimings);
+
       const rowCheckboxes = slotTimings.map((slotTiming, index2) => {
         // console.log('slotTiming in For Each', slotTiming);
         const isChecked = daySelectedSlots.includes(slotTiming);
@@ -453,12 +458,14 @@ export default class AddProduct extends Component {
           {day}
         </Text>
       );
+
       const rowElements = [rowDay, ...rowCheckboxes];
       const row = (
         <View style={styles.slotRow} key={'r' + index}>
           {rowElements}
         </View>
       );
+
       slotsTable.push(row);
     });
 
@@ -498,7 +505,7 @@ export default class AddProduct extends Component {
 
             <SwitchToggle
               switchOn={this.state.isAllTimeAvailable}
-              onPress={(e) => {
+              onPress={e => {
                 this.setState({
                   isAllTimeAvailable: !this.state.isAllTimeAvailable,
                 });

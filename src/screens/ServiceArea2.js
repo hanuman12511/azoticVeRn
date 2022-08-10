@@ -97,7 +97,7 @@ class Maps extends Component {
 
     if (this.state.editing) {
       mapOptions.scrollEnabled = false;
-      mapOptions.onPanDrag = (e) => this.onPress(e);
+      mapOptions.onPanDrag = e => this.onPress(e);
     }
 
     return (
@@ -108,7 +108,7 @@ class Maps extends Component {
           mapType={MAP_TYPES.STANDARD}
           initialRegion={this.state.region}
           {...mapOptions}>
-          {this.state.polygons.map((polygon) => (
+          {this.state.polygons.map(polygon => (
             <Polygon
               key={polygon.id}
               coordinates={polygon.coordinates}

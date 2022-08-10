@@ -97,7 +97,7 @@ export default class AddGalleryItemsScreen extends Component {
         this.setState({isLoading: false});
         const {gst} = response;
         if (gst) {
-          const gstType = gst.map((item) => ({
+          const gstType = gst.map(item => ({
             label: item.value,
             value: item.key,
           }));
@@ -178,7 +178,7 @@ export default class AddGalleryItemsScreen extends Component {
     try {
       ImagePicker.showImagePicker(
         {noData: true, mediaType: 'photo'},
-        (response) => {
+        response => {
           console.log('Response = ', response);
 
           if (response.didCancel) {
@@ -234,17 +234,17 @@ export default class AddGalleryItemsScreen extends Component {
     }
   };
 
-  handlePriceChange = (price) => {
+  handlePriceChange = price => {
     this.setState({price});
   };
-  handleShortChange = (description) => {
+  handleShortChange = description => {
     this.setState({description});
   };
-  handleNameChange = (itemName) => {
+  handleNameChange = itemName => {
     this.setState({itemName});
   };
 
-  handleGstChange = (gstId) => {
+  handleGstChange = gstId => {
     console.log(gstId);
     this.setState({gstId});
   };
@@ -257,13 +257,13 @@ export default class AddGalleryItemsScreen extends Component {
       null,
     );
 
-    if (item.userPic === null) {
-      // Alert.alert('Alert!', 'Please Upload Image First', [{text: 'OK'}], {
-      //   cancelable: false,
-      // });
-      showToast('Please Upload Image First');
-      return;
-    }
+    // if (item.userPic === null) {
+    //   // Alert.alert('Alert!', 'Please Upload Image First', [{text: 'OK'}], {
+    //   //   cancelable: false,
+    //   // });
+    //   showToast('Please Upload Image First');
+    //   return;
+    // }
 
     if (item.itemName.trim() === '') {
       // Alert.alert('Alert!', 'Please Enter Item Name', [{text: 'OK'}], {

@@ -7,7 +7,7 @@ import basicStyles from '../styles/BasicStyles';
 //api call for background image
 import {KEYS, getData} from '../api/UserPreference';
 // Images
-import appLogo from '../assets/images/appLogo.png';
+import appLogo from '../assets/app_icon/appLogo.png';
 // import splash_background from '../assets/images/splash_background.png';
 
 export default class SplashScreen extends PureComponent {

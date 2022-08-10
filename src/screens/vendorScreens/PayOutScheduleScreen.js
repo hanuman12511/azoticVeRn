@@ -93,23 +93,15 @@ export default class TotalEarningScreen extends Component {
 
       // processing response
       if (response) {
-        const {
-          success,
-          completeEarnings,
-          message,
-          isAuthTokenExpired,
-        } = response;
+        const {success, completeEarnings, message, isAuthTokenExpired} =
+          response;
 
         this.setState({isLoading: false});
 
         if (success) {
           const {accountDetails} = response;
-          const {
-            bankName,
-            bankAccountName,
-            bankAccountNumber,
-            ifscCode,
-          } = accountDetails;
+          const {bankName, bankAccountName, bankAccountNumber, ifscCode} =
+            accountDetails;
 
           this.setState({
             bankName,
@@ -467,7 +459,7 @@ export default class TotalEarningScreen extends Component {
             data={this.state.paymentDetails}
             renderItem={this.renderItem}
             showsVerticalScrollIndicator={false}
-            keyExtractor={(item) => item.id}
+            keyExtractor={item => item.id}
             ItemSeparatorComponent={this.itemSeparator}
             contentContainerStyle={[basicStyles.marginBottom]}
           />
@@ -502,7 +494,7 @@ export default class TotalEarningScreen extends Component {
                     placeholder="Enter Account Holder Name..."
                     style={styles.input}
                     value={bankAccountName}
-                    onChangeText={(e) => this.setState({bankAccountName: e})}
+                    onChangeText={e => this.setState({bankAccountName: e})}
                   />
                 </View>
                 <View style={styles.inputContainer}>
@@ -511,7 +503,7 @@ export default class TotalEarningScreen extends Component {
                     placeholder="Enter Bank Name..."
                     style={styles.input}
                     value={bankName}
-                    onChangeText={(e) => this.setState({bankName: e})}
+                    onChangeText={e => this.setState({bankName: e})}
                   />
                 </View>
                 <View style={styles.inputContainer}>
@@ -519,8 +511,8 @@ export default class TotalEarningScreen extends Component {
                   <TextInput
                     placeholder="Enter Account Number..."
                     style={styles.input}
-                    value={bankAccountNumber.toString()}
-                    onChangeText={(e) => this.setState({bankAccountNumber: e})}
+                    value={bankAccountNumber}
+                    onChangeText={e => this.setState({bankAccountNumber: e})}
                   />
                 </View>
                 <View style={styles.inputContainer}>
@@ -529,7 +521,7 @@ export default class TotalEarningScreen extends Component {
                     placeholder="Enter IFSC Code..."
                     style={styles.input}
                     value={ifscCode}
-                    onChangeText={(e) => this.setState({ifscCode: e})}
+                    onChangeText={e => this.setState({ifscCode: e})}
                   />
                 </View>
 
@@ -585,7 +577,7 @@ export default class TotalEarningScreen extends Component {
                     numberOfLines={4}
                     style={styles.multiLineInputDesign}
                     value={this.state.description}
-                    onChangeText={(e) => {
+                    onChangeText={e => {
                       this.setState({description: e});
                     }}
                   />

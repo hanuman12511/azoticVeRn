@@ -98,6 +98,11 @@ export default class VendorCommentScreen extends Component {
       );
 
       // Processing Response
+
+      console.log('====================================');
+      console.log(response);
+      console.log('====================================');
+
       if (response) {
         this.setState({
           isLoading: false,
@@ -315,7 +320,7 @@ export default class VendorCommentScreen extends Component {
     }
   };
 
-  handleComment = (comment) => {
+  handleComment = comment => {
     const {is_reply_or_comment} = this.state;
     if (is_reply_or_comment === 'reply' && comment === '') {
       this.setState({comment, buttonType: 'cancel'});
@@ -353,7 +358,7 @@ export default class VendorCommentScreen extends Component {
     }
   };
 
-  handleProfilePopup = async (item) => {
+  handleProfilePopup = async item => {
     await this.setState({profileDate: item});
     this.setState({showFormPopup: true});
   };

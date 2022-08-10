@@ -98,11 +98,14 @@ export default class AddGalleryItemsScreen extends Component {
         false,
       );
 
+      console.log('====================================');
+      console.log(response);
+      console.log('====================================');
       if (response) {
         this.setState({isLoading: false});
         const {productTypes} = response;
         if (productTypes) {
-          const productType = productTypes.map((item) => ({
+          const productType = productTypes.map(item => ({
             label: item.value,
             value: item.key,
           }));
@@ -136,17 +139,17 @@ export default class AddGalleryItemsScreen extends Component {
     this.setState({Customization: [{name: '', price: ''}]});
   };
 
-  renderContactForm = (item) => {
+  renderContactForm = item => {
     const {Customization} = this.state;
     // console.log(importantContacts);
 
     return Customization.map((item, index) => {
-      const handleNameChange = (newName) => {
+      const handleNameChange = newName => {
         item.name = newName;
         this.setState({CustomName: newName});
       };
 
-      const handlePriceChange = (newPrice) => {
+      const handlePriceChange = newPrice => {
         item.price = newPrice;
         this.setState({CustomPrice: newPrice});
       };
@@ -193,17 +196,17 @@ export default class AddGalleryItemsScreen extends Component {
     this.setState({AddOns: [{name: '', price: ''}]});
   };
 
-  renderAddOnsForm = (item) => {
+  renderAddOnsForm = item => {
     const {AddOns} = this.state;
     // console.log(importantContacts);
 
     return AddOns.map((item, index) => {
-      const handleNameChange = (newName) => {
+      const handleNameChange = newName => {
         item.name = newName;
         this.setState({AddName: newName});
       };
 
-      const handlePriceChange = (newPrice) => {
+      const handlePriceChange = newPrice => {
         item.price = newPrice;
         this.setState({AddPrice: newPrice});
       };
@@ -263,7 +266,7 @@ export default class AddGalleryItemsScreen extends Component {
     </View>
   );
 
-  removeCustomItem = (item) => {
+  removeCustomItem = item => {
     const {Custom} = this.state;
     let temper = Custom.indexOf(item);
     Custom.splice(temper, 1);
@@ -295,7 +298,7 @@ export default class AddGalleryItemsScreen extends Component {
       </TouchableOpacity>
     </View>
   );
-  removeAddonItem = (item) => {
+  removeAddonItem = item => {
     const {Addones} = this.state;
     let temp = Addones.indexOf(item);
     Addones.splice(temp, 1);
@@ -303,11 +306,11 @@ export default class AddGalleryItemsScreen extends Component {
     console.log('AddOns Product Deleted', Addones);
   };
 
-  handleFoodTypeChange = (foodType) => {
+  handleFoodTypeChange = foodType => {
     this.setState({foodType});
   };
 
-  handleProductTypeChange = (productTypeId) => {
+  handleProductTypeChange = productTypeId => {
     this.setState({productTypeId});
   };
 
@@ -408,7 +411,7 @@ export default class AddGalleryItemsScreen extends Component {
                   <FlatList
                     data={Customization}
                     renderItem={this.renderContactForm}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false}
                     //numColumns={2}
                     ItemSeparatorComponent={this.itemSeparator}
@@ -430,7 +433,7 @@ export default class AddGalleryItemsScreen extends Component {
                 data={Custom}
                 renderItem={this.renderItem}
                 showsVerticalScrollIndicator={false}
-                keyExtractor={(item) => item.id}
+                keyExtractor={item => item.id}
                 //numColumns={2}
                 ItemSeparatorComponent={this.itemSeparator}
                 contentContainerStyle={styles.containerStyle}
@@ -444,7 +447,7 @@ export default class AddGalleryItemsScreen extends Component {
                   <FlatList
                     data={AddOns}
                     renderItem={this.renderAddOnsForm}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={item => item.id}
                     showsVerticalScrollIndicator={false}
                     //numColumns={2}
                     ItemSeparatorComponent={this.itemSeparator}
@@ -466,7 +469,7 @@ export default class AddGalleryItemsScreen extends Component {
                 data={Addones}
                 renderItem={this.renderItems}
                 showsVerticalScrollIndicator={false}
-                keyExtractor={(item) => item.id}
+                keyExtractor={item => item.id}
                 //numColumns={2}
                 ItemSeparatorComponent={this.itemSeparator}
                 contentContainerStyle={styles.containerStyle}

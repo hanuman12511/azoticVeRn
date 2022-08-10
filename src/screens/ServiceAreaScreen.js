@@ -233,12 +233,8 @@ class ServiceAreaScreen extends Component {
   };
 
   render() {
-    const {
-      isLoading,
-      deliveryCharge,
-      vendorLatitude,
-      vendorLongitude,
-    } = this.state;
+    const {isLoading, deliveryCharge, vendorLatitude, vendorLongitude} =
+      this.state;
     if (isLoading) {
       return <CustomLoader />;
     }
@@ -257,7 +253,7 @@ class ServiceAreaScreen extends Component {
 
         <View style={{height: '68%'}}>
           <View style={{position: 'relative', height: hp(64)}}>
-            <MapView
+           <MapView
               provider={PROVIDER_GOOGLE}
               style={{
                 left: 0,
@@ -269,7 +265,7 @@ class ServiceAreaScreen extends Component {
               mapType={MAP_TYPES.STANDARD}
               initialRegion={this.state.region}
               {...mapOptions}>
-              {this.state.polygons.map((polygon) => (
+              {this.state.polygons.map(polygon => (
                 <Polygon
                   key={polygon.id}
                   coordinates={polygon.coordinates}
@@ -286,7 +282,7 @@ class ServiceAreaScreen extends Component {
                 title={`You're Here`}
                 pinColor={'red'}
               />
-            </MapView>
+            </MapView> 
           </View>
         </View>
 
